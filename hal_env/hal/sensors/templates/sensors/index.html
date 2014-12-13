@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{%block mainContent %}
+        <div class="container">
+            <h2>Temperature</h2>
+        </div>
+        <!-- Example row of columns -->
+        <div class="row">
+            {% if sensors_list %}
+            {% for sensor in sensors_list %}
+                <div class="col-md-4">
+                    <h3>{{ sensor.name }}</h3>
+                    <h1>{{ sensor.data.value }} °C / {{sensor.data.value_f}} °F</h1>
+                    <p>{{ sensor.data.pTimestamp}}</p>
+                    <p><a class="btn btn-default" href="/sensors/{{sensor.id}}" role="button">View details &raquo;</a></p>
+                </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-md-4">
+                <h4>No Sensors</h4>
+            </div>
+            {% endif %}
+        </div>
+{% endblock %}
