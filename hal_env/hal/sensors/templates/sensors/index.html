@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{%block mainContent %}
+{% block mainContent %}
         <div class="container">
             <h2>Temperature</h2>
         </div>
@@ -12,7 +12,7 @@
                     <h3>{{ sensor.name }}</h3>
                     <h1>{{ sensor.data.value }} °C / {{sensor.data.value_f}} °F</h1>
                     <p>{{ sensor.data.pTimestamp}}</p>
-                    <p><a class="btn btn-default" href="/sensors/{{sensor.id}}" role="button">View details &raquo;</a></p>
+                    <p><a class="btn btn-default" href="/sensors/{{sensor.id}}/" role="button">View details &raquo;</a></p>
                 </div>
             {% endfor %}
             {% else %}
